@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="shape"></div>
+    
+    <select id="selector">
+        <option value="Square">Square</option>
+        <option value="Circle">Circle</option>
+        <option value="Triangle">Triangle</option>
+    </select>
+</body>
+</html>
+
+<style>
+    #shape {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+
+    .triangle {
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 60px solid green;
+
+        width: 0px !important;
+        height: 0px !important;
+        background-color: transparent !important;
+    }
+
+    .circle {
+        border-radius: 160px;
+    }
+</style>
+
+
+<script>
+document.getElementById('selector').addEventListener('change', (e) => {
+    const shape = document.getElementById('selector').value;
+    const shapeElem = document.getElementById('shape');
+
+    shapeElem.classList.remove('triangle')
+    shapeElem.classList.remove('circle')
+
+    if (shape == 'Circle') {
+        shapeElem.classList.add('circle')
+    } else if (shape == 'Triangle') {
+        shapeElem.classList.add('triangle')
+    }
+
+})
+</script>
