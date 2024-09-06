@@ -20,7 +20,7 @@ No but i've used this a lot https://developer.mozilla.org/en-US/
 I'll use javascript to simplify tasks
 
 **Going Beyond: If you had to add an additional feature or functionality to one of the tasks in this lab, what would it be and why?**
-Fullstack recreation of google
+Fullstack recreation of google. It would be a nice and partical change for students.
 
 **Reflection on Learning: What's one key takeaway from this lab that you want to remember as you continue your web development journey?**
 Javascript should have better typing
