@@ -13,11 +13,16 @@
 </html>
 
 <script>
-document.getElementById('btn-move-left').addEventListener('click', () => {
+const elem = document.getElementById('move-box');
+var transform = 0;
 
+document.getElementById('btn-move-left').addEventListener('click', () => {
+    transform -= 50;
+    elem.style.transform = `translateX(${transform}px)`
 })
 
 document.getElementById('btn-move-right').addEventListener('click', () => {
-    
+    transform += 50;
+    elem.style.transform = `translateX(${transform}px)`
 })
 </script>
