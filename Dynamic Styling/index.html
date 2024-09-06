@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="selector">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+
+    <div id="change-me" style="font-size: 16px;" class="red">
+        <p>Some text content inside</p>
+    </div>
+</body>
+</html>
+
+<script>
+const SELECTOR = document.getElementById('selector');
+const TARGET = document.getElementById('change-me')
+
+function update() {
+    TARGET.classList.remove('red', 'green', 'blue')
+    TARGET.classList.add(SELECTOR.value)
+}
+
+SELECTOR.addEventListener('change', update)
+
+update()
+</script>
+
+<style>
+.blue {
+    color: blue;
+    font-size: 18px !important;
+}
+
+.red {
+    color: red;
+    font-style: italic;
+}
+
+.green {
+    color: green;
+    background-color: lightgreen;
+}
+</style>
