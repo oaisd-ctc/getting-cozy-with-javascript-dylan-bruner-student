@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="error-message" style="color: red"></p>
+
+    <input type="text" id="username">Username</input>
+    <br>
+    <input type="text" id="email">Email</input>
+    <br>
+    <input type="text" id="age">Age</input>
+    <br>
+    <button id="submit">Submit</button>
+</body>
+</html>
+
+<script>
+const USERNAME_ELEM = document.getElementById('username')
+const EMAIL_ELEM = document.getElementById('email')
+const AGE_ELEM = document.getElementById('age')
+
+const ERROR_ELEM = document.getElementById('error-message')
+
+document.getElementById('submit').addEventListener('click', () => {
+    if (USERNAME_ELEM.value.length < 3) {
+        ERROR_ELEM.textContent = 'Your username must be at least 3 characters long!'
+        return
+    } else if ((EMAIL_ELEM.value.indexOf('@') == -1) || (EMAIL_ELEM.value.indexOf('.') == -1)) {
+        ERROR_ELEM.textContent = 'You must enter a valid email address!'
+        return
+    } else if ((AGE_ELEM.value > 100 || AGE_ELEM.value < 10) || isNaN(AGE_ELEM.value)) {
+        ERROR_ELEM.textContent = 'That is not a valid age!'
+        return
+    }
+
+
+    ERROR_ELEM.textContent = ''
+})
+</script>
